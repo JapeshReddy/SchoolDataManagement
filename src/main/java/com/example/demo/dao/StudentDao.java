@@ -6,15 +6,20 @@ import com.example.demo.entity.Student;
 
 public interface StudentDao {
 
-	Student saveStudent(Student s, int section_id);
-
-	boolean updateStudent(Student s);
+	Student updateStudent(Student s);
 
 	boolean deleteStudentByID(int id);
 
 	Student getStudentByID(int id);
 
-	List<Student> getAllStudentsByClass(int id, int year);
+	boolean existsById(int id);
 
-	List<Student> getAllStudentsByClassAndSection(int class_id, int section_id, int year);
+	boolean existsByEmail(String email);
+
+
+	List<Student> getAllStudentsByClass(int id);
+
+	Student saveStudent(Student s, int sec_id);
+
+	List<Student> getAllStudentsByClassAndSection(int section_id);
 }

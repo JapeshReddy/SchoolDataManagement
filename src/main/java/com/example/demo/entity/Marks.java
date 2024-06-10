@@ -1,10 +1,10 @@
 package com.example.demo.entity;
 
 import java.sql.Date;
-import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +33,7 @@ public class Marks {
 	private byte marks;
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
+	@Schema(type = "string", format = "date", example = "2023-12-31")
 	private Date examDate;
 	@ManyToOne
 	@JoinColumn(name = "student_id")
@@ -40,9 +41,7 @@ public class Marks {
 	private Student student_ref;
 	@ManyToOne
 	@JoinColumn(name = "subject_id")
+	@JsonIgnore
 	private Subject subject_ref;
-	
-	
-	
 
 }
