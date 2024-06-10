@@ -2,13 +2,14 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import com.example.demo.dto.MarksDto;
 import com.example.demo.entity.Marks;
 
-public class MarksService {
+public interface MarksService {
 
-	Marks saveMarks(Marks s, int student_id, int subject_id);
+	MarksDto saveMarks(Marks s, int student_id, int subject_id);
 
-	Marks updateMarks(Marks s, int id);
+	MarksDto updateMarks(Marks s, int id);
 
 	boolean deleteMarksByID(int id);
 
@@ -16,10 +17,10 @@ public class MarksService {
 
 	boolean deleteMarksBySubjectID(int subject_id);
 
-	Marks getMarksByID(int id);
+	MarksDto getMarksByID(int id);
 
-	List<Marks> getMarksByStudentID(int student_id);
+	List<MarksDto> getMarksByStudentID(int student_id);
 
-	List<Marks> getMarksBySubjectId(int subject_id);
+	List<MarksDto> getMarksBySubjectId(int subject_id);
 
 }

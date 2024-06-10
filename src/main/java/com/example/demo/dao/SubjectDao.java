@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.entity.Subject;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-
 public interface SubjectDao {
 
 	Subject saveSubject(Subject s, int class_id);
@@ -19,4 +17,10 @@ public interface SubjectDao {
 	Subject getSubjectByID(@PathVariable int id);
 
 	List<Subject> getSubjectsByClassID(int id);
+	
+	 void checkIfCodeExists(String code);
+	 
+	 void checkIfIdExists(int id);
+	 
+	 
 }
